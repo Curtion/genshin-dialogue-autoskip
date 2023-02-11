@@ -1,3 +1,6 @@
+fork说明: 新增了弹窗提示当前允许状态。
+注意： 必须全屏，分辨率必须1920*1080。
+
 # genshin-dialogue-autoskip
 
 This script automatically skips dialogue in Genshin Impact, always choosing the bottom dialogue option. 
