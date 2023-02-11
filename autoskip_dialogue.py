@@ -1,6 +1,7 @@
 import time
 import random
 
+import tkinter as tk
 import pyautogui
 from pynput.mouse import Controller
 from pynput import keyboard
@@ -53,10 +54,12 @@ def exit_program():
         if str(key) == 'Key.f8':
             main.status = 'run'
             print('RUNNING')
+            tipautoclose('RUNNING')
 
         elif str(key) == 'Key.f9':
             main.status = 'pause'
             print('PAUSED')
+            tipautoclose('PAUSED')
 
         elif str(key) == 'Key.f12':
             main.status = 'exit'
@@ -98,6 +101,17 @@ def main():
             time.sleep(random_interval())
             pyautogui.click()
 
+def tipautoclose(msg):
+    root = tk.Tk()
+    root.overrideredirect(True)
+    root.geometry("800x55+560+915")
+    root.attributes("-alpha", 0.8)
+    root.wm_attributes('-topmost', 1)
+    root.resizable(False, False)
+    label = tk.Label(root, text=msg, font=("Arial", 32), justify="center")
+    label.pack()
+    root.after(1000, lambda: root.destroy())
+    root.mainloop()
 
 if __name__ == "__main__":
     mouse = Controller()
