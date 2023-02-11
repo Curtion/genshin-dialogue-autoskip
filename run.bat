@@ -1,3 +1,3 @@
 pushd "%~dp0"
-py ./autoskip_dialogue.py
+python ./autoskip_dialogue.py
 @pause
